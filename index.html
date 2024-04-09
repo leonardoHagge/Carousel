@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Carrossel de Slides</title>
+
+</head>
+
+<body>
+
+    <div class="slides-container" id="slides-container">
+    </div>
+    <nav>
+        <div>
+            <span>⏶</span>
+        </div>
+        <ul>
+            <li><button id="previous">⏮</button></li>
+            <li><button id="play" class="hide">⏵</button></li>
+            <li><button id="pause">⏸</button></li>
+            <li><button id="next">⏭</button></li>
+            <li>
+                <input type="number" id="time" min="10000">
+                <button id="save">ok</button>
+            </li>
+            <li><button id="sites"><span>💻</span></button></li>
+        </ul>
+    </nav>
+
+    <dialog>
+        <h2>Adicionar Site</h2>
+        <br>
+        <label>Salvos:</label>
+        <ul id="url-list">
+        </ul>
+        <br />
+        <label>Adicionar:</label>
+        <div>
+            <input type="text" id="url" placeholder="insira URL do site">
+            <p><b>ou</b></p>
+            <div>
+                <label>
+                    Anexe o arquivo a abaixo
+                </label>
+                <br />
+                <br />
+                <input id="files" accept=".txt" type="file" />
+            </div>
+            <br />
+            <button class="btn" id="save-url">Adicionar</button>
+        </div>
+        <!--  <form method="dialog">
+        <button>OK</button>
+      </form> -->
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

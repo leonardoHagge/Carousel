@@ -1,0 +1,226 @@
+:root {
+  --nav-color: rgb(221, 221, 221);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.slides-container {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  position: static;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+
+nav {
+  z-index: 2000;
+  position: fixed;
+  bottom: -110px;
+  width: 100%;
+  height: fit-content;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--nav-color);
+  margin: 0;
+  transition: all .3s ease-in;
+}
+
+
+
+
+nav:hover,
+nav:has(>div:hover),
+body:has(>dialog[open])>nav {
+  bottom: 0px;
+}
+
+nav>ul {
+  width: 50%;
+  display: flex;
+  list-style: none;
+}
+
+nav>ul>li:not(:has(>button.hide)) {
+  width: 25%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+nav>ul>li>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 35px;
+  height: 70px;
+  width: 70px;
+  background-color: white;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  line-height: 14px;
+  transition: all .3s ease-in;
+}
+
+
+nav>ul>li>button:hover {
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+
+
+nav>div {
+  position: absolute;
+  top: -30px;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  background-color: var(--nav-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav>div>span {
+  font-size: 25px;
+  color: black;
+  margin: 0;
+  line-height: 10px;
+  padding: 0;
+}
+
+
+.hide {
+  display: none;
+}
+
+
+#time {
+  border: 1px solid lightgray;
+  font-size: 35px;
+  outline: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+#save {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 20px;
+}
+
+
+
+dialog {
+  top: 10%;
+  width: 40%;
+  margin: 0 30%;
+  height: fit-content;
+  border: 0;
+  padding: 10px;
+  background-color: gra;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px 1px rgb(255, 255, 255)
+}
+
+
+
+.btn {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  transition: all .3s;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+dialog>div {
+  padding: 10px;
+}
+
+
+
+dialog>div>input {
+  width: 95%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 15px;
+  outline: 0;
+}
+
+dialog>div>p {
+  text-align: center;
+}
+
+
+dialog>ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+dialog>ul>li {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 15px;
+  margin-top: 5px;
+  position: relative;
+}
+
+dialog>ul>li>span {
+  text-align: center;
+  color: red;
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
+  font-size: 14px;
+  top: -6px;
+  right: -10px;
+  font-weight: bold;
+  position: absolute;
+  transition: all .3s;
+}
+
+dialog>ul>li>span:hover {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
