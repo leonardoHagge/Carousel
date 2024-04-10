@@ -2,13 +2,18 @@
   --nav-color: rgb(21, 9, 88);
   --color-buttons: rgb(47, 36, 99);
   --color-icons-and-borders: white;
-
 }
+
+@font-face {
+  font-family: mPlus;
+  src: url("static\MPLUS1Code-Regular.ttf");
+}
+
 
 * {
   padding: 0;
   margin: 0;
-  font-family: "M PLUS 1 Code", monospace;
+  font-family: "mPlus", monospace;
 }
 
 .slides-container {
