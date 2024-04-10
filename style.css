@@ -1,10 +1,14 @@
 :root {
-  --nav-color: rgb(221, 221, 221);
+  --nav-color: rgb(21, 9, 88);
+  --color-buttons: rgb(47, 36, 99);
+  --color-icons-and-borders: white;
+
 }
 
 * {
   padding: 0;
   margin: 0;
+  font-family: "M PLUS 1 Code", monospace;
 }
 
 .slides-container {
@@ -48,7 +52,8 @@ nav {
 
 nav:hover,
 nav:has(>div:hover),
-body:has(>dialog[open])>nav {
+body:has(>dialog[open])>nav,
+body:has(>nav>ul>li>input:focus)>nav {
   bottom: 0px;
 }
 
@@ -59,35 +64,50 @@ nav>ul {
 }
 
 nav>ul>li:not(:has(>button.hide)) {
-  width: 25%;
+  min-width: 10%;
+  margin: 0 5%;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  transition: all .3s;
+
+}
+
+
+
+
+nav>ul>li:has(>input) {
+
+  width: 25%;
 }
 
 nav>ul>li>button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-size: 35px;
+  color: var(--color-icons-and-borders);
+  font-size: 25px;
   height: 70px;
   width: 70px;
-  background-color: white;
+  font-weight: bold;
+
+  background-color: var(--nav-color);
   border: 0;
   border-radius: 50%;
   padding: 0;
   line-height: 14px;
-  transition: all .3s ease-in;
+  z-index: 1;
+  transition: all .1s ease-in;
+
 }
 
 
 nav>ul>li>button:hover {
+  background-color: var(--color-buttons);
   cursor: pointer;
-  background: black;
-  color: white;
+  /* border: 1px solid var(--color-icons-and-borders); */
 }
 
 
@@ -104,16 +124,24 @@ nav>div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 nav>div>span {
   font-size: 25px;
-  color: black;
+  color: var(--color-icons-and-borders);
   margin: 0;
   line-height: 10px;
   padding: 0;
 }
 
+
+nav>img {
+  width: 100px;
+  aspect-ratio: 1;
+  left: 20px;
+  position: absolute;
+}
 
 .hide {
   display: none;
@@ -141,23 +169,42 @@ nav>div>span {
 
 
 
+#backdrop {
+  display: none;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: .5;
+  position: fixed;
+  z-index: 5000;
+}
+
+
+
+body:has(>dialog[open])>div#backdrop {
+  display: block;
+}
+
 dialog {
-  top: 10%;
   width: 40%;
+  top: 10%;
   margin: 0 30%;
   height: fit-content;
   border: 0;
-  padding: 10px;
-  background-color: gra;
-  border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2), 1px 1px 1px 1px rgb(255, 255, 255)
+  /* border: 5px solid var(--nav-color); */
+  border-radius: 35px;
+  outline: none;
+  padding: 20px 40px;
+  z-index: 5001;
 }
 
 
 
 .btn {
-  background-color: black;
-  color: white;
+  background-color: var(--nav-color);
+  color: var(--color-icons-and-borders);
   border-radius: 5px;
   padding: 15px;
   width: 100%;
@@ -166,6 +213,7 @@ dialog {
 
 .btn:hover {
   cursor: pointer;
+  background-color: var(--color-buttons);
 }
 
 dialog>div {

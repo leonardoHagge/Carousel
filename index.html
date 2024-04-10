@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
 
     <title>Carrossel de Slides</title>
 
@@ -18,16 +21,17 @@
         <div>
             <span>⏶</span>
         </div>
+        <img src="logo.png">
         <ul>
-            <li><button id="previous">⏮</button></li>
-            <li><button id="play" class="hide">⏵</button></li>
-            <li><button id="pause">⏸</button></li>
-            <li><button id="next">⏭</button></li>
+            <li><button id="previous">◀◀</button></li>
+            <li><button id="play" class="hide">▶</button></li>
+            <li><button id="pause">||</button></li>
+            <li><button id="next">▶▶</button></li>
             <li>
                 <input type="number" id="time" min="10000">
                 <button id="save">ok</button>
             </li>
-            <li><button id="sites"><span>💻</span></button></li>
+            <li><button id="sites">Sites</button></li>
         </ul>
     </nav>
 
@@ -57,6 +61,7 @@
         <button>OK</button>
       </form> -->
     </dialog>
+    <div id="backdrop"></div>
 
     <script src="script.js"></script>
 </body>

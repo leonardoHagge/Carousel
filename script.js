@@ -7,6 +7,7 @@ var stop = document.getElementById("stop");
 var iptTime = document.getElementById("time");
 var save = document.getElementById("save");
 var sites = document.getElementById("sites");
+var backdrop = document.getElementById("backdrop");
 var dialog = document.getElementsByTagName('dialog')[0];
 var url = document.getElementById('url');
 var files = document.getElementById('files');
@@ -107,6 +108,15 @@ save.addEventListener("click", () => {
 });
 
 sites.addEventListener('click', () => {
+  if (dialog.hasAttribute('open'))
+    dialog.removeAttribute('open')
+  else
+    dialog.setAttribute('open', '');
+
+})
+
+
+backdrop.addEventListener('click', () => {
   if (dialog.hasAttribute('open'))
     dialog.removeAttribute('open')
   else
